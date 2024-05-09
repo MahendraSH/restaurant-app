@@ -5,6 +5,7 @@ import cloudinary from "cloudinary";
 import dotenv from "dotenv";
 import errorController from "./middlewares/error-controller.js";
 import dbConnect from "./db/connect.js";
+import userRouter from "./routes/user-routes.js";
 dotenv.config();
 cloudinary.v2.config({
     cloud_name: process.env.CLOUD_NAME,
@@ -28,6 +29,7 @@ dbConnect();
 app.get("/", (req, res) => {
     res.send("Hello World!");
 });
+app.use("/api/user", userRouter);
 
 app.use(errorController);
-app.listen(process.env.PORT || 5000, () => console.log("Server running...on port" + process.env.PORT || 5000));
+app.listen(process.env.PORT || 5000, () => console.log("Server running...on port : " + process.env.PORT || 5000));

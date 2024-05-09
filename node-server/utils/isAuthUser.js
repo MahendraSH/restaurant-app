@@ -3,7 +3,7 @@
 import asyncErrorHandler from "../middlewares/async-error-handler.js";
 import ErrorHandler from "./error-handler.js";
 import jwt from "jsonwebtoken";
-import userModel from "../models/user-model.js";
+import userModel from "../db/models/user-models.js";
 
 const isAuthUser = asyncErrorHandler(async (req, res, next) => {
 
