@@ -54,7 +54,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-gradient-to-r from-background via-primary/20 to-background/90 text-foreground;
+    @apply bg-background text-foreground;
   }
   /*  scrollbar */
   ::-webkit-scrollbar {
